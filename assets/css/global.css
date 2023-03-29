@@ -378,7 +378,14 @@
 }
 
 /* mobile menu css */
-
+#dl-menu {
+    display: none;
+}
+@media (max-width:991px) {
+	#dl-menu {
+		display: block;
+	}
+}
 
 #dl-menu li a {
 	color: #fff !important;
@@ -412,29 +419,7 @@
 	color: #fff !important;
 }
 
-#dl-menu ul {
-	top: 65px;
-	margin: 0;
-	left: 0;
-}
 
-@media (max-width: 767px) {
-	#dl-menu ul {
-		top: 64px;
-	}
-}
-
-@media (max-width: 375px) {
-	#dl-menu ul {
-		top: 65px;
-	}
-}
-
-@media screen and (min-width: 992px) {
-	#dl-menu {
-		display: none;
-	}
-}
 
 #dl-menu .dl-trigger {
 	right: -20px;
@@ -500,11 +485,11 @@ button.dl-trigger {
 
 .dl-menuwrapper button.dl-active,
 .dl-menuwrapper ul {
-	background: #c0b596;
+	background: #aba38d;;
 }
 
 .dl-menuwrapper button.dl-active {
-	background-color: #c0b596;
+	background-color: #aba38d;;
 }
 
 
@@ -513,9 +498,9 @@ button.dl-trigger {
 	content: '';
 	position: absolute;
 	width: 68%;
-	height: 5px;
+	height: 2px;
 	background: #fff;
-	top: 8px;
+	top: 9px;
 	left: 16%;
 	box-shadow:
 		0 10px 0 #fff,
@@ -578,14 +563,17 @@ button.dl-trigger {
 
 .dl-menuwrapper .dl-menu {
 	margin: 5px 0 0 0;
+	width: 300px;
 	position: absolute;
-	width: 100%;
+	top: 75px;
+	margin: 0;
+	left: 0;
 	opacity: 0;
 	pointer-events: none;
-	-webkit-transform: translateY(10px);
-	transform: translateY(10px);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
+	transform: translateY(0px);
+	transition: all .3s ease-in-out;
 }
 
 .dl-menuwrapper .dl-menu.dl-menu-toggle {
@@ -593,11 +581,10 @@ button.dl-trigger {
 }
 
 .dl-menuwrapper .dl-menu.dl-menuopen {
-	width: 250px;
+	width: 300px;
+	top: 70px;
 	opacity: 1;
 	pointer-events: auto;
-	-webkit-transform: translateY(0px);
-	transform: translateY(0px);
 }
 
 /* Hide the inner submenus */
@@ -629,8 +616,8 @@ All this is done for any sub-level being entered.
 /* Dynamically added submenu outside of the menu context */
 .dl-menuwrapper>.dl-submenu {
 	position: absolute;
-	width: 100%;
-	top: 50px;
+	width: 300px;
+	top: 70px;
 	left: 0;
 	margin: 0;
 }

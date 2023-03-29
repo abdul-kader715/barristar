@@ -176,7 +176,16 @@
                 nextArrow: '<button type="button" class="slick-next">Next</button>',
                 dots: true,
                 fade: true,
-                cssEase: 'linear'
+                cssEase: 'linear',
+                responsive: [
+                    {
+                      breakpoint: 991,
+                      settings: {
+                        arrows:false,
+                        dots: true
+                      }
+                    }
+                  ]
             });
         }
     }
